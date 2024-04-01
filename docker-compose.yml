@@ -1,0 +1,12 @@
+version: '3'
+services:
+  shinyapp:
+    build: .
+    container_name: shinyapp
+    ports:
+      - "3838:3838"
+    volumes:
+      - ./app.R:/srv/shiny-server/app.R
+      - ./www:/srv/shiny-server/www
+      - /srv/shiny-server/
+      - /srv/shiny-log/
